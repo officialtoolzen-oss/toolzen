@@ -1,60 +1,106 @@
 export default function Home() {
+  const tools = [
+    "JPG to PDF",
+    "PDF to JPG",
+    "Image Compressor",
+    "QR Generator",
+    "Word Counter",
+    "Case Converter",
+  ];
+
+  const categories = [
+    "PDF Tools",
+    "Image Tools",
+    "Text Tools",
+    "Developer Tools",
+    "SEO Tools",
+    "AI Tools",
+  ];
+
   return (
-    <main className="min-h-screen bg-black text-white">
-      <section className="flex flex-col items-center justify-center min-h-screen px-6">
-        <h1 className="text-6xl font-bold mb-4">
-          ToolZen
+    <main className="min-h-screen bg-gray-50 text-gray-900">
+      <section className="px-6 py-20 text-center">
+        <h1 className="text-5xl font-bold mb-6">
+          ToolZen 🚀
         </h1>
 
-        <p className="text-xl text-gray-300 mb-8">
-          10,000+ Free Online Tools For Everyone
+        <p className="text-xl max-w-2xl mx-auto text-gray-600 mb-8">
+          10,000+ Free Online Tools For Everyone.
+          Fast, Simple, Powerful & SEO Friendly.
         </p>
 
-        <div className="flex gap-4">
-          <button className="px-6 py-3 bg-white text-black rounded-lg font-semibold">
+        <div className="max-w-xl mx-auto">
+          <input
+            type="text"
+            placeholder="Search tools..."
+            className="w-full p-4 rounded-xl border border-gray-300 shadow-sm"
+          />
+        </div>
+
+        <div className="mt-8 flex justify-center gap-4 flex-wrap">
+          <button className="px-6 py-3 rounded-xl bg-black text-white">
             Explore Tools
           </button>
 
-          <button className="px-6 py-3 border border-white rounded-lg">
+          <button className="px-6 py-3 rounded-xl border">
             Learn More
           </button>
         </div>
       </section>
 
-      <section className="py-20 px-6">
-        <h2 className="text-4xl font-bold text-center mb-10">
+      <section className="px-6 py-12 max-w-6xl mx-auto">
+        <h2 className="text-3xl font-bold mb-8 text-center">
           Popular Categories
         </h2>
 
-        <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-          <div className="bg-zinc-900 p-6 rounded-xl">
-            <h3 className="text-2xl font-bold mb-2">
-              PDF Tools
-            </h3>
-            <p className="text-gray-400">
-              Merge, Split, Compress PDF
-            </p>
-          </div>
-
-          <div className="bg-zinc-900 p-6 rounded-xl">
-            <h3 className="text-2xl font-bold mb-2">
-              Image Tools
-            </h3>
-            <p className="text-gray-400">
-              Resize, Convert, Compress Images
-            </p>
-          </div>
-
-          <div className="bg-zinc-900 p-6 rounded-xl">
-            <h3 className="text-2xl font-bold mb-2">
-              Developer Tools
-            </h3>
-            <p className="text-gray-400">
-              JSON, Base64, Hash Generators
-            </p>
-          </div>
+        <div className="grid md:grid-cols-3 gap-6">
+          {categories.map((category) => (
+            <div
+              key={category}
+              className="bg-white p-6 rounded-2xl shadow"
+            >
+              <h3 className="text-xl font-semibold">
+                {category}
+              </h3>
+            </div>
+          ))}
         </div>
       </section>
+
+      <section className="px-6 py-12 max-w-6xl mx-auto">
+        <h2 className="text-3xl font-bold mb-8 text-center">
+          Popular Tools
+        </h2>
+
+        <div className="grid md:grid-cols-3 gap-6">
+          {tools.map((tool) => (
+            <div
+              key={tool}
+              className="bg-white p-6 rounded-2xl shadow"
+            >
+              <h3 className="text-xl font-semibold mb-3">
+                {tool}
+              </h3>
+
+              <button className="px-4 py-2 rounded-lg bg-black text-white">
+                Open Tool
+              </button>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <footer className="mt-20 py-10 text-center border-t bg-white">
+        <h3 className="font-bold text-xl">ToolZen</h3>
+
+        <p className="text-gray-600 mt-2">
+          Free Online Tools Platform
+        </p>
+
+        <p className="text-gray-500 text-sm mt-4">
+          © 2026 ToolZen. All Rights Reserved.
+        </p>
+      </footer>
     </main>
   );
 }
