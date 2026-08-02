@@ -1,11 +1,29 @@
 export default function Home() {
   const tools = [
-    "JPG to PDF",
-    "PDF to JPG",
-    "Image Compressor",
-    "QR Generator",
-    "Word Counter",
-    "Case Converter",
+    {
+      name: "JPG to PDF",
+      link: "/jpg-to-pdf",
+    },
+    {
+      name: "PDF to JPG",
+      link: "#",
+    },
+    {
+      name: "Image Compressor",
+      link: "#",
+    },
+    {
+      name: "QR Generator",
+      link: "#",
+    },
+    {
+      name: "Word Counter",
+      link: "#",
+    },
+    {
+      name: "Case Converter",
+      link: "#",
+    },
   ];
 
   const categories = [
@@ -75,16 +93,19 @@ export default function Home() {
         <div className="grid md:grid-cols-3 gap-6">
           {tools.map((tool) => (
             <div
-              key={tool}
+              key={tool.name}
               className="bg-white p-6 rounded-2xl shadow"
             >
               <h3 className="text-xl font-semibold mb-3">
-                {tool}
+                {tool.name}
               </h3>
 
-              <button className="px-4 py-2 rounded-lg bg-black text-white">
+              <a
+                href={tool.link}
+                className="inline-block px-4 py-2 rounded-lg bg-black text-white"
+              >
                 Open Tool
-              </button>
+              </a>
             </div>
           ))}
         </div>
